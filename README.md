@@ -33,8 +33,8 @@ Installation
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h3 class="mbr-section-title display-2" id="gb-map-header">Green Button Participants</h3>
-                    <small class="mbr-section-subtitle">Over 65,000,000 data points and 35 members and counting...</small>
+                    <h3 class="mbr-section-title display-2" id="gb-map-header">Green Button Ecosystem</h3>
+                    <small class="mbr-section-subtitle">Over 65,000,000 data points and 25 members and counting...</small>
                 </div>
             </div>
         </div>
