@@ -23,7 +23,7 @@ Installation
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet-responsive-popup@0.2.0/leaflet.responsive.popup.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet-responsive-popup@0.2.0/leaflet.responsive.popup.css" />
-    <link rel="stylesheet" href="https://cdn.rawgit.com/jancsarc/GB-Leaflet-Org-Map/master/static/css/gb_map_styles.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/jancsarc/GB-Leaflet-Org-Map/d6175cf6/static/css/gb_map_styles.min.css">
     ```
 
 2. Add the following container where you would like to place the map on the page:
@@ -51,7 +51,7 @@ Installation
 3. Add the following script file to the page (at the bottom of the header, *after jQuery is imported*, but before the script to initialize the map.):
 
     ```
-    <script src="https://cdn.rawgit.com/jancsarc/GB-Leaflet-Org-Map/master/static/js/gb_map_leaflet.min.js"></script>
+    <script src="https://cdn.rawgit.com/jancsarc/GB-Leaflet-Org-Map/d6175cf6/static/js/gb_map_leaflet.min.js"></script>
     ```
     
 4. Initialize the map (with options if required). Use the token that you recieve when signing up to the Green Button directory service:
