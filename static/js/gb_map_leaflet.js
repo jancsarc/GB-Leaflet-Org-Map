@@ -1,4 +1,4 @@
-<!-- Define custom marker colors -->
+// Define custom marker colors
 var greenIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -102,7 +102,6 @@ function populateMap(organizations, mymap, show_details_btn) {
           }
         }
 
-        <!-- Change map bounds to fit all markers -->
         var group = L.featureGroup(markerArray); //add markers array to featureGroup
         mymap.fitBounds(group.getBounds());
     }
@@ -161,46 +160,17 @@ function initGBMap(token, show_details_btn, display_feed) {
     // Remove the attribution info for the graph.
     mymap.attributionControl.setPrefix('');
 
-    <!-- On page load plot the organizations on the map -->
     $.ajax({
         url: '/api/current/organizations/?format=json',
         method: "GET",
         dataType: "json",
-        crossDomain: true,
         contentType: "application/json; charset=utf-8",
         cache: false,
-        beforeSend: function (xhr) {
-            /* Authorization header */
-            xhr.setRequestHeader("Authorization", "Token " + token);
-        },
         success: function (data) {
             populateMap(data, mymap, show_details_btn)
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            <!-- Fail gracefully (hide map div on failure -->
             $('#gb-map').hide()
         }
     });
-
-    if (display_feed == true) {
-        $.ajax({
-            url: '/hidden-api/update-feed/',
-            method: "GET",
-            dataType: "json",
-            crossDomain: true,
-            contentType: "application/json; charset=utf-8",
-            cache: false,
-            beforeSend: function (xhr) {
-                /* Authorization header */
-                xhr.setRequestHeader("Authorization", "Token " + token);
-            },
-            success: function (data) {
-                setFeed(data, mymap);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                <!-- Fail gracefully (hide org feed on error -->
-                $('.gb-update-feed-div').hide()
-            }
-        });
-    }
 }
