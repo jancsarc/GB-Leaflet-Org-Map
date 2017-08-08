@@ -161,10 +161,9 @@ function initGBMap(token, show_details_btn, display_feed) {
     mymap.attributionControl.setPrefix('');
 
     $.ajax({
-        url: '/api/current/organizations/?format=json',
+        url: 'https://cdn.rawgit.com/jancsarc/GB-Leaflet-Org-Map/be558406/static/data/org_static_list.json',
         method: "GET",
         dataType: "json",
-        contentType: "application/json; charset=utf-8",
         cache: false,
         success: function (data) {
             populateMap(data, mymap, show_details_btn)
